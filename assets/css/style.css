@@ -1,38 +1,95 @@
 body{
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
+    background-color: #091833;
+    background-image:
+          linear-gradient(#007b81 4px, transparent 2px),
+          linear-gradient(90deg, #007b81 4px, transparent 2px);
+    background-size: 50px 50px, 100px 100px;
 }
+/* HEADER */
 .header{
     width: 100%;
-    position: absolute;
+    position: static;
     top: 0;
     right: 0;
     left: 0;
-    z-index: 1000;
-    background-color: #26a69a;
-    display:flex;
+    background-color: #0abdc6;
+}
+.header__inner{
+    display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .logo{
-    font-family: 'Abril Fatface', cursive;
+    font-family: 'ZCOOL QingKe HuangYou', sans-serif;
     font-size: 30px;
     font-weight: 500;
-    color: #333;
+    color: #091833;
+    margin: 20px 20px;
 }
 .nav{
-    font-size: 20px;
+    font-family: 'Audiowide', sans-serif;
+    font-size: 25px;
     text-transform: uppercase;
-    align-items: center;
+    margin: 20px 20px;
 }
 .nav_link{
     display: inline-block;
     vertical-align: top;
     margin: 0 10px; 
     text-decoration: none;
-    color: #333;
-    transition: color .2s linear    ;
+    color: #091833;
+    transition: color .1s linear    ;
 }
 .nav_link:hover{
-    color: #ff7043;
+    color: #d60c59;
+}
+main{
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #133e7c;
+}
+/* INTRO */
+.intro__title{
+    font-family: 'ZCOOL QingKe HuangYou', sans-serif;
+    color: #d60c59;
+    font-size: 100px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1;
+    margin: 0 auto 40px;
+}
+
+/*SECTION*/
+.section{
+    padding-bottom: 40px;
+    background-color: #d60c59;
+    border: solid #b600aa 1px;
+    margin: 0 20px;
+    margin-bottom: 10px;
+}
+
+.section__title{
+    font-family: 'Audiowide', sans-serif;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #091833;
+    text-align: center;
+}
+.section__content{
+    display: flex;
+    justify-content: space-between;
+}
+.section__image{
+    margin: 10px;
+    border: solid #0abdc6 2px;
+    padding: 15px;
+}
+.section__text{
+    color: #091833;
+    margin: 10px;
+    font-size: 20px;
+    font-family: 'Orbitron', sans-serif;
 }
