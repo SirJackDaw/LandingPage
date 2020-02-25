@@ -8,7 +8,9 @@ body{
           linear-gradient(90deg, #007b81 4px, transparent 2px);
     background-size: 50px 50px, 100px 100px;
 }
+
 /* HEADER */
+
 .header{
     width: 100%;
     position: static;
@@ -51,7 +53,9 @@ main{
     margin: 0 auto;
     background-color: #133e7c;
 }
+
 /* INTRO */
+
 .intro__title{
     font-family: 'ZCOOL QingKe HuangYou', sans-serif;
     color: #d60c59;
@@ -63,6 +67,7 @@ main{
 }
 
 /*SECTION*/
+
 .section{
     padding-bottom: 40px;
     background-color: #d60c59;
@@ -86,10 +91,44 @@ main{
     margin: 10px;
     border: solid #0abdc6 2px;
     padding: 15px;
+    max-width: 400px;
 }
 .section__text{
     color: #091833;
     margin: 10px;
     font-size: 20px;
     font-family: 'Orbitron', sans-serif;
+}
+.item__name{
+    color: #091833;
+    font-size: 20px;
+    font-family: 'Orbitron', sans-serif;
+}
+.item__description{
+    color: #091833;
+    font-size: 15px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* FORM */
+.form{
+    align-items: center;
+}
+input{
+    width: 500px;
+    
+}
+input[type=text]{
+    border: 4px solid #0abdc6;
+    background-color: none;
+}
+
+/* FOOTER */
+.footer{
+    width: 100%;
+    position: static;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #0abdc6;
 }
