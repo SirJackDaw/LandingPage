@@ -216,4 +216,5 @@ input[type="button"]:hover{
 
 .map{
     padding: 10px;
+    border: solid #0abdc6 4px;
 }
