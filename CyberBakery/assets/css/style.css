@@ -209,12 +209,51 @@ input[type="button"]:hover{
 
 .footer .nav,
 .footer .contacts,
-.footer .map{
+.footer .map_wrapper{
     flex: 1 200px;
     display: inline-block;
 }
 
+
+    
 .map{
     padding: 10px;
     border: solid #0abdc6 4px;
+    margin: 5px;
+    width: 600px;
+    height: 200px;
+}
+@media(max-width: 1080px)
+{
+    .section__content{
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+    .footer{
+        align-items: flex-start;
+    }
+
+}
+@media(max-width: 640px)
+{
+    .intro__title{
+        font-size: 3em;
+    }
+    .map{
+        padding: 5px;
+        border: solid #0abdc6 2px;
+        width: inherit;
+        max-height: 200px;
+    }
+    .footer{
+        align-items: flex-start;
+    }
+}
+
+@media(max-width: 480px)
+{
+    .section__image img{
+        min-width: 100px;
+    }
+
 }
