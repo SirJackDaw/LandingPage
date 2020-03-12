@@ -7,7 +7,26 @@ body{
           linear-gradient(#007b81 4px, transparent 2px),
           linear-gradient(90deg, #007b81 4px, transparent 2px);
     background-size: 50px 50px, 100px 100px;
+    animation: back 6s ease infinite 4s;
 }
+@keyframes back{
+    from{
+        background-color: #091833;
+        background-image:
+          linear-gradient(#007b81 4px, transparent 2px),
+          linear-gradient(90deg, #007b81 4px, transparent 2px);
+    }
+    50%{
+        background-color: #d60c59;
+    }
+    to{
+        background-color: #091833;
+        background-image:
+          linear-gradient(#007b81 4px, transparent 2px),
+          linear-gradient(90deg, #007b81 4px, transparent 2px);
+    }
+}
+
 
 /* HEADER */
 
@@ -24,13 +43,25 @@ body{
     justify-content: space-between;
     align-items: center;
 }
+
+@keyframes rot{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
 .logo{
     font-family: 'ZCOOL QingKe HuangYou', sans-serif;
     font-size: 30px;
     font-weight: 500;
     color: #091833;
     margin: 20px 20px;
+    animation: rot 10s cubic-bezier(0.210, -0.600, 0.710, 1.620) 8s;
 }
+
 .nav,
 .contacts{
     font-family: 'Audiowide', sans-serif;
