@@ -248,12 +248,40 @@ input[type="button"]:hover{
     .footer{
         align-items: flex-start;
     }
+    .section__title{
+        margin: 5px;
+    }
+    .footer .nav_link{
+        display: inline;
+        margin-bottom: 0.5em;
+    }
 }
 
 @media(max-width: 480px)
 {
     .section__image img{
-        min-width: 100px;
+        width: 100%;
+    }
+    .section__text
+    {
+        font-size: 14px;
+    }
+    .section__text{
+        margin: 0;
+    }
+    .item__name{
+        margin: 0;
+    }
+    .item__description{
+        font-size: 12px;
+    }
+    .contacts{
+        display: inline;
+        font-size: 20px;
+        margin-bottom: 0.5em;
+    }
+    .logo{
+        margin-bottom: 2px;
     }
 
 }
