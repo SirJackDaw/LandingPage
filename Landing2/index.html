@@ -11,19 +11,27 @@
 			var canvas = document.getElementById("canvas"),
 			    ctx = canvas.getContext('2d');
             var img = new Image();
-            var style = canvas.style;
             img.src = 'assets/images/image.jpg';
             img.onload = function() {
-                console.log(img.width, 'cjcb');
-                console.log(img.height, 'cjcbq');
-                canvas.width = img.width / 2;
-                canvas.height = img.height / 2;
-                style.width = img.width;
-                style.height = img.height;
+                canvas.width = img.width;
+                canvas.height = img.height;
                 ctx.drawImage(img, 0, 0);
+
+                var url = 'http://api.forismatic.com/api/1.0/';
+                var resp = await fetch(url,{
+                        method: 'getQuote',
+                        format: 'text',
+                        key: '1',
+                        lang: 'en',
+                });
+                if (resp.ok)
+                {
+                    var ans = resp.text;
+                    alert(ans);
+                } else {
+                    alert("Ошибка HTTP: " + response.status);
+                }
             }
-            console.log(style.width, '00000');
-            console.log(style.height, '111111');
 		</script>
 	</body>
 </html>
