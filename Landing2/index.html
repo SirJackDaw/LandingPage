@@ -1,12 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="assets/style.css">
-</head>
-<body>
-    <header class="header"></head>
-</body>
+<!doctype html>
+<html>
+	<head>
+		<title>canvasExample</title>
+        <meta charset='utf-8' />
+        <link rel="stylesheet" href="assets/css/style.css">
+	</head>
+	<body>
+        <canvas id='canvas'>Обновите браузер</canvas>
+		<script>
+			var canvas = document.getElementById("canvas"),
+			    ctx = canvas.getContext('2d');
+            var img = new Image();
+            var style = canvas.style;
+            img.src = 'assets/images/image.jpg';
+            img.onload = function() {
+                console.log(img.width, 'cjcb');
+                console.log(img.height, 'cjcbq');
+                canvas.width = img.width / 2;
+                canvas.height = img.height / 2;
+                style.width = img.width;
+                style.height = img.height;
+                ctx.drawImage(img, 0, 0);
+            }
+            console.log(style.width, '00000');
+            console.log(style.height, '111111');
+		</script>
+	</body>
 </html>
