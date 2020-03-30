@@ -7,5 +7,12 @@ img.onload = () => {
     canvas.height = img.height;
     ctx.drawImage(img, 0, 0);
 
-    var url = 'http://api.forismatic.com/api/1.0/';
+    var url = 'https://api.forismatic.com/api/1.0/?method=getQuote&lang=en';
+    console.log(sendRequest(url));
+}
+async function sendRequest(url)
+{
+    return fetch(url).then(response =>{
+        return response.json();
+    });
 }
