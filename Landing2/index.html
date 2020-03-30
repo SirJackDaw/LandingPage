@@ -1,37 +1,12 @@
 <!doctype html>
 <html>
 	<head>
-		<title>canvasExample</title>
+		<title>Philosophy</title>
         <meta charset='utf-8' />
         <link rel="stylesheet" href="assets/css/style.css">
 	</head>
 	<body>
         <canvas id='canvas'>Обновите браузер</canvas>
-		<script>
-			var canvas = document.getElementById("canvas"),
-			    ctx = canvas.getContext('2d');
-            var img = new Image();
-            img.src = 'assets/images/image.jpg';
-            img.onload = function() {
-                canvas.width = img.width;
-                canvas.height = img.height;
-                ctx.drawImage(img, 0, 0);
-
-                var url = 'http://api.forismatic.com/api/1.0/';
-                var resp = await fetch(url,{
-                        method: 'getQuote',
-                        format: 'text',
-                        key: '1',
-                        lang: 'en',
-                });
-                if (resp.ok)
-                {
-                    var ans = resp.text;
-                    alert(ans);
-                } else {
-                    alert("Ошибка HTTP: " + response.status);
-                }
-            }
-		</script>
+		<script src = "script.js"></script>
 	</body>
 </html>
