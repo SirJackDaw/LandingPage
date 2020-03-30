@@ -13,7 +13,6 @@ img.onload = () => {
     .then(data => {
       console.log(data);
     });
-    console.log(resp['quoteText']);
 }
 function sendRequest(url)
 {
