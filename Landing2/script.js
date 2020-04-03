@@ -1,7 +1,7 @@
 var canvas = document.getElementById("canvas"),
 			    ctx = canvas.getContext('2d');
 var img = new Image();
-img.src = 'assets/images/image.jpg';
+img.src = 'https://source.unsplash.com/random';
 img.onload = () => {
     canvas.width = img.width;
     canvas.height = img.height;
@@ -11,10 +11,35 @@ img.onload = () => {
     var resp = sendRequest(url)
     .then(response => response.json())
     .then(data => {
-      console.log(data);
+      console.log(data.quoteText);
+      var text = data.quoteText;
+      var fontSize = canvas.width / 20
+      ctx.font = `${fontSize}px Do Hyeon, sans-serif`;
+      ctx.fillStyle = "red";
+      ctx.textAlign = "center";
+      // ctx.fillText(`${data.quoteText.toUpperCase()}`, canvas.width / 2, canvas.height / 2);
+      wrapText(ctx, text, canvas.width / 2, canvas.height / 2, canvas.width / 2, fontSize)
     });
 }
 function sendRequest(url)
 {
     return fetch(url, { mode: "cors" });
 }
+function wrapText(context, text, marginLeft, marginTop, maxWidth, lineHeight)
+    {
+      var words = text.split(" ");
+      var countWords = words.length;
+      var line = "";
+      for (var n = 0; n < countWords; n++) {
+        var testLine = line + words[n] + " ";
+        var testWidth = context.measureText(testLine).width;
+        if (testWidth > maxWidth) {
+          context.fillText(line, marginLeft, marginTop);
+          line = words[n] + " ";
+          marginTop += lineHeight;
+        } else {
+          line = testLine;
+        }
+      }
+      context.fillText(line, marginLeft, marginTop);
+    }
