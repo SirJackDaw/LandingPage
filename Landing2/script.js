@@ -12,17 +12,17 @@ img.onload = () => {
   var resp = sendRequest(url)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data.quoteText);
-      var text = data.quoteText;
-      var fontSize = canvas.width / 20;
-      ctx.font = `${fontSize}px 'Righteous', cursive`;
-      ctx.fillStyle = "red";
-      ctx.textAlign = "center";
-      wrapText(
-        ctx,
+	console.log(data.quoteText);
+    var text = data.quoteText;
+    var fontSize = canvas.width / 20;
+    ctx.font = `${fontSize}px 'Lobster', cursive`;
+    ctx.fillStyle = "white";
+    ctx.textAlign = "center";
+     wrapText(
+    	ctx,
         text,
         canvas.width / 2,
-        canvas.height / 2,
+        canvas.height / 3,
         canvas.width / 2,
         fontSize
       );
@@ -52,8 +52,9 @@ const wrapText = (context, text, marginLeft, marginTop, maxWidth, lineHeight) =>
 }
 
 const download_img = (el) => {
-var canvas = document.getElementById("canvas")
-  var image = canvas.toDataURL("image/png");
-  console.log(image);
-  el.href = image;
+	var canvas = document.getElementById("canvas");
+	var image = canvas.toDataURL("image/png");
+  	// console.log(image);
+	  // el.href = image;
+	  window.location.href=image;
 };
