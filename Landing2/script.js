@@ -1,6 +1,7 @@
 var canvas = document.getElementById("canvas"),
   ctx = canvas.getContext("2d");
 var img = new Image();
+img.setAttribute('crossorigin', 'anonymous')
 img.src = "https://source.unsplash.com/random";
 img.onload = () => {
   canvas.width = img.width;
@@ -51,10 +52,9 @@ const wrapText = (context, text, marginLeft, marginTop, maxWidth, lineHeight) =>
   context.fillText(line, marginLeft, marginTop);
 }
 
-const download_img = (el) => {
-	var canvas = document.getElementById("canvas");
-	var image = canvas.toDataURL("image/png");
-  	// console.log(image);
-	  // el.href = image;
-	  window.location.href=image;
-};
+function download_img(){
+  let download = document.getElementById("download");
+	let image = document.getElementById("canvas").toDataURL("image/png")
+      .replace("image/png", "image/octet-stream");
+  download.setAttribute("href", image);
+}
