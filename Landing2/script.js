@@ -1,6 +1,6 @@
-var canvas = document.getElementById("canvas"),
+let canvas = document.getElementById("canvas"),
   ctx = canvas.getContext("2d");
-var img = new Image();
+let img = new Image();
 img.setAttribute('crossorigin', 'anonymous')
 img.src = "https://source.unsplash.com/random";
 img.onload = () => {
@@ -8,14 +8,14 @@ img.onload = () => {
   canvas.height = img.height;
   ctx.drawImage(img, 0, 0);
 
-  var url =
+  let url =
     "https://cors-anywhere.herokuapp.com/https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json";
-  var resp = sendRequest(url)
+  sendRequest(url)
     .then((response) => response.json())
     .then((data) => {
 	console.log(data.quoteText);
-    var text = data.quoteText;
-    var fontSize = canvas.width / 20;
+    let text = data.quoteText;
+    let fontSize = 30;
     ctx.font = `${fontSize}px 'Lobster', cursive`;
     ctx.fillStyle = "white";
     ctx.textAlign = "center";
@@ -35,12 +35,12 @@ const sendRequest = url => {
 }
 
 const wrapText = (context, text, marginLeft, marginTop, maxWidth, lineHeight) => {
-  var words = text.split(" ");
-  var countWords = words.length;
-  var line = "";
-  for (var n = 0; n < countWords; n++) {
-    var testLine = line + words[n] + " ";
-    var testWidth = context.measureText(testLine).width;
+  let words = text.split(" ");
+  let countWords = words.length;
+  let line = "";
+  for (let n = 0; n < countWords; n++) {
+    let testLine = line + words[n] + " ";
+    let testWidth = context.measureText(testLine).width;
     if (testWidth > maxWidth) {
       context.fillText(line, marginLeft, marginTop);
       line = words[n] + " ";
