@@ -6,6 +6,7 @@ img.src = "https://source.unsplash.com/random";
 img.onload = () => {
   canvas.width = img.width;
   canvas.height = img.height;
+  
   ctx.drawImage(img, 0, 0);
 
   let url =
